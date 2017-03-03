@@ -15,7 +15,7 @@ dir = ['IMAGE Files', 'DOC Files', 'PY Files', 'VIDEO Files',
        'XML Files', 'AUDIO Files']
 
 
-HTML_FORMAT = ['.HTML', '.HTM', '.XHTML']
+HTML_FORMAT = ['.HTML5', '.HTML', '.HTM', '.XHTML']
 
 IMG_FORMAT = ['.JPEG', '.JPG', '.TIFF', '.GIF', '.BMP', '.PNG', '.BPG', 'SVG',
               '.HEIF', '.PSD']
