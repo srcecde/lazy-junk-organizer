@@ -1,103 +1,44 @@
-"""
--*- coding: utf-8 -*-
-========================
-Python Lazy Junk Files Organizer
-========================
-Developed by: Chirag Rathod (Srce Cde)
-Email: chiragr83@gmail.com
-========================
-"""
-
-import os
-
-dir = ['IMAGE Files', 'DOC Files', 'PY Files', 'VIDEO Files',
-       'COMPRESS Files', 'HTML Files', 'TXT Files', 'PDF Files',
-       'XML Files', 'AUDIO Files']
+#!/usr/bin/env python3
+from pathlib import Path
 
 
-HTML_FORMAT = ['.HTML5', '.HTML', '.HTM', '.XHTML']
-
-IMG_FORMAT = ['.JPEG', '.JPG', '.TIFF', '.GIF', '.BMP', '.PNG', '.BPG', 'SVG',
-              '.HEIF', '.PSD']
-
-VID_FORMAT = ['.AVI', '.FLV', '.WMV', '.MOV', '.MP4', '.WEBM', '.VOB', '.MNG',
-              '.QT', '.MPG', '.MPEG', '.3GP']
-
-DOC_FORMAT = ['.OXPS', '.EPUB', '.PAGES', '.DOCX', '.DOC', '.FDF', '.ODS',
-              '.ODT', '.PWI', '.XSN', '.XPS', '.DOTX', '.DOCM', '.DOX',
-              '.RVG', '.RTF', '.RTFD', '.WPD', '.XLS', '.XLSX', '.PPT', 'PPTX']
-
-ZIP_FORMAT = ['.A', '.AR', '.CPIO', '.ISO', '.TAR', '.GZ', '.RZ', '.7Z',
-              '.DMG', '.RAR', '.XAR', '.ZIP']
-
-AUDIO_FORMAT = ['.AAC', '.AA', '.AAC', '.DVF', '.M4A', '.M4B', '.M4P', '.MP3',
-                '.MSV', 'OGG', 'OGA', '.RAW', '.VOX', '.WAV', '.WMA']
-
-TXT_FORMAT = ['.TXT', '.IN', '.OUT']
-
-
-class OrganizeJunk:
-
-    def OJunk(self):
-        for mdir in dir:
-            if os.path.isdir(mdir):
-                pass
-            else:
-                os.mkdir(mdir)
-
-        curr_dir = os.getcwd()
-
-        for file in os.listdir():
-
-            if file.endswith('.py') or file.endswith('.PY'):
-                os.rename(curr_dir + '/' + file, curr_dir + '/PY Files/' + file)
-
-            for iformat in IMG_FORMAT:
-                if file.endswith(iformat) or file.endswith(iformat.lower()):
-                    os.rename(curr_dir + '/' + file, curr_dir + '/IMAGE Files/' + file)
-
-            for vformat in VID_FORMAT:
-                if file.endswith(vformat) or file.endswith(vformat.lower()):
-                    os.rename(curr_dir + '/' + file, curr_dir + '/VIDEO Files/' + file)
-
-            for dformat in DOC_FORMAT:
-                if file.endswith(dformat) or file.endswith(dformat.lower()):
-                    os.rename(curr_dir + '/' + file, curr_dir + '/DOC Files/' + file)
-              
-            for hformat in HTML_FORMAT:
-                if file.endswith(hformat) or file.endswith(hformat.lower()):
-                    os.rename(curr_dir + '/' + file, curr_dir + '/HTML Files/' + file)
-
-            for tformat in TXT_FORMAT:
-                if file.endswith(tformat) or file.endswith(tformat.lower()):
-                    os.rename(curr_dir + '/' + file, curr_dir + '/TXT Files/' + file)
-
-            if file.endswith('.pdf') or file.endswith('.PDF'):
-                os.rename(curr_dir + '/' + file, curr_dir + '/PDF Files/' + file)
-
-            for zformat in ZIP_FORMAT:
-                if file.endswith(zformat) or file.endswith(zformat.lower()):
-                    os.rename(curr_dir + '/' + file, curr_dir + '/COMPRESS Files/' + file)
-
-            for zformat in AUDIO_FORMAT:
-                if file.endswith(zformat) or file.endswith(zformat.lower()):
-                    os.rename(curr_dir + '/' + file, curr_dir + '/AUDIO Files/' + file)
-
-            if file.endswith('.xml') or file.endswith('.XML'):
-                os.rename(curr_dir + '/' + file, curr_dir + '/PDF Files/' + file)
-
-    def rempty(self):
-        for rdir in dir:
-            try:
-                os.rmdir(rdir)
-            except:
-                pass
+DIRECTORIES = {
+    'html': ['.html5', '.html', '.htm', '.xhtml'],
+    'images': ['.jpeg', '.jpg', '.tiff', '.gif', '.bmp', '.png', '.bpg', 'svg',
+               '.heif', '.psd'],
+    'videos': ['.avi', '.flv', '.wmv', '.mov', '.mp4', '.webm', '.vob', '.mng',
+               '.qt', '.mpg', '.mpeg', '.3gp'],
+    'documents': ['.oxps', '.epub', '.pages', '.docx', '.doc', '.fdf', '.ods',
+                  '.odt', '.pwi', '.xsn', '.xps', '.dotx', '.docm', '.dox',
+                  '.rvg', '.rtf', '.rtfd', '.wpd', '.xls', '.xlsx', '.ppt',
+                  'pptx'],
+    'archives': ['.a', '.ar', '.cpio', '.iso', '.tar', '.gz', '.rz', '.7z',
+                 '.dmg', '.rar', '.xar', '.zip'],
+    'audio': ['.aac', '.aa', '.aac', '.dvf', '.m4a', '.m4b', '.m4p', '.mp3',
+              '.msv', 'ogg', 'oga', '.raw', '.vox', '.wav', '.wma'],
+    'plaintext': ['.txt', '.in', '.out'],
+    'pdf': ['.pdf'],
+    'python': ['.py'],
+    'xml': ['.xml']
+}
 
 
-def main():
-    Oj = OrganizeJunk()
-    Oj.OJunk()
-    Oj.rempty()
+FILE_FORMATS = {file_format: directory
+                for directory, file_formats in DIRECTORIES.items()
+                for file_format in file_formats}
+
+
+def organize_junk():
+    for entry in os.scandir():
+        if entry.is_dir():
+            continue
+        file_path = Path(entry)
+        file_format = file_path.suffix.lower() 
+        if file_format in FILE_FORMATS:
+            directory_path = Path(FILE_FORMATS[file_format])
+            directory_path.mkdir(exist_ok=True)
+            file_path.rename(directory_path.joinpath(file_path)
+
 
 if __name__ == "__main__":
-    main()
+    organize_junk()
