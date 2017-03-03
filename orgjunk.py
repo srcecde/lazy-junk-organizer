@@ -38,7 +38,7 @@ def organize_junk():
         if file_format in FILE_FORMATS:
             directory_path = Path(FILE_FORMATS[file_format])
             directory_path.mkdir(exist_ok=True)
-            file_path.rename(directory_path.joinpath(file_path)
+            file_path.rename(directory_path.joinpath(file_path))
 
 
 if __name__ == "__main__":
