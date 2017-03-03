@@ -4,23 +4,23 @@ from pathlib import Path
 
 
 DIRECTORIES = {
-    'html': ['.html5', '.html', '.htm', '.xhtml'],
-    'images': ['.jpeg', '.jpg', '.tiff', '.gif', '.bmp', '.png', '.bpg', 'svg',
-               '.heif', '.psd'],
-    'videos': ['.avi', '.flv', '.wmv', '.mov', '.mp4', '.webm', '.vob', '.mng',
-               '.qt', '.mpg', '.mpeg', '.3gp'],
-    'documents': ['.oxps', '.epub', '.pages', '.docx', '.doc', '.fdf', '.ods',
-                  '.odt', '.pwi', '.xsn', '.xps', '.dotx', '.docm', '.dox',
-                  '.rvg', '.rtf', '.rtfd', '.wpd', '.xls', '.xlsx', '.ppt',
-                  'pptx'],
-    'archives': ['.a', '.ar', '.cpio', '.iso', '.tar', '.gz', '.rz', '.7z',
-                 '.dmg', '.rar', '.xar', '.zip'],
-    'audio': ['.aac', '.aa', '.aac', '.dvf', '.m4a', '.m4b', '.m4p', '.mp3',
-              '.msv', 'ogg', 'oga', '.raw', '.vox', '.wav', '.wma'],
-    'plaintext': ['.txt', '.in', '.out'],
-    'pdf': ['.pdf'],
-    'python': ['.py'],
-    'xml': ['.xml']
+    "html": [".html5", ".html", ".htm", ".xhtml"],
+    "images": [".jpeg", ".jpg", ".tiff", ".gif", ".bmp", ".png", ".bpg", "svg",
+               ".heif", ".psd"],
+    "videos": [".avi", ".flv", ".wmv", ".mov", ".mp4", ".webm", ".vob", ".mng",
+               ".qt", ".mpg", ".mpeg", ".3gp"],
+    "documents": [".oxps", ".epub", ".pages", ".docx", ".doc", ".fdf", ".ods",
+                  ".odt", ".pwi", ".xsn", ".xps", ".dotx", ".docm", ".dox",
+                  ".rvg", ".rtf", ".rtfd", ".wpd", ".xls", ".xlsx", ".ppt",
+                  "pptx"],
+    "archives": [".a", ".ar", ".cpio", ".iso", ".tar", ".gz", ".rz", ".7z",
+                 ".dmg", ".rar", ".xar", ".zip"],
+    "audio": [".aac", ".aa", ".aac", ".dvf", ".m4a", ".m4b", ".m4p", ".mp3",
+              ".msv", "ogg", "oga", ".raw", ".vox", ".wav", ".wma"],
+    "plaintext": [".txt", ".in", ".out"],
+    "pdf": [".pdf"],
+    "python": [".py"],
+    "xml": [".xml"]
 }
 
 
