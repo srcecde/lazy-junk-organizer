@@ -14,6 +14,9 @@ dir = ['IMAGE Files', 'DOC Files', 'PY Files', 'VIDEO Files',
        'COMPRESS Files', 'HTML Files', 'TXT Files', 'PDF Files',
        'XML Files', 'AUDIO Files']
 
+
+HTML_FORMAT = ['.HTML', '.HTM', '.XHTML']
+
 IMG_FORMAT = ['.JPEG', '.JPG', '.TIFF', '.GIF', '.BMP', '.PNG', '.BPG', 'SVG',
               '.HEIF', '.PSD']
 
@@ -60,9 +63,10 @@ class OrganizeJunk:
             for dformat in DOC_FORMAT:
                 if file.endswith(dformat) or file.endswith(dformat.lower()):
                     os.rename(curr_dir + '/' + file, curr_dir + '/DOC Files/' + file)
-
-            if file.endswith('.html') or file.endswith('.HTML'):
-                os.rename(curr_dir + '/' + file, curr_dir + '/HTML Files/' + file)
+              
+            for hformat in HTML_FORMAT:
+                if file.endswith(hformat) or file.endswith(hformat.lower()):
+                    os.rename(curr_dir + '/' + file, curr_dir + '/HTML Files/' + file)
 
             for tformat in TXT_FORMAT:
                 if file.endswith(tformat) or file.endswith(tformat.lower()):
