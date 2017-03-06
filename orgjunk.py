@@ -49,6 +49,11 @@ def organize_junk():
             directory_path.mkdir(exist_ok=True)
             file_path.rename(directory_path.joinpath(file_path))
 
+        for dir in os.scandir():
+            try:
+                os.rmdir(dir)
+            except:
+                pass
 
 if __name__ == "__main__":
     organize_junk()
