@@ -49,11 +49,20 @@ def organize_junk():
             directory_path.mkdir(exist_ok=True)
             file_path.rename(directory_path.joinpath(file_path))
 
-        for dir in os.scandir():
-            try:
+    try:
+        os.mkdir("OTHER-FILES")
+    except:
+        pass
+
+    for dir in os.scandir():
+        try:
+            if dir.is_dir():
                 os.rmdir(dir)
-            except:
-                pass
+            else:
+                os.rename(os.getcwd() + '/' + str(Path(dir)), os.getcwd() + '/OTHER-FILES/' + str(Path(dir)))
+        except:
+            pass
+
 
 if __name__ == "__main__":
     organize_junk()
