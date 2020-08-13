@@ -36,6 +36,7 @@ DIRECTORIES = {
     "C#" :[".cs"],
     "C++": [".cpp"],
     "C": [".c"],
+    "GO": [".go"],
     "YAML": [".yaml"],
     "JSON": [".json"],
     "ASP Classic": [".asp"],
