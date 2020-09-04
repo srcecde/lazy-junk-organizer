@@ -23,7 +23,7 @@ DIRECTORIES = {
     "ARCHIVES": [".a", ".ar", ".arh",".tar",".tar.bz2",".tar.gz",".cpio", ".tar", ".gz", ".rz", ".7z", 
                  ".rar", ".xar", ".zip",".xz",".pkg",".deb",".rpm"], 
     "DISKIMAGE":[".iso",".img",".vcd",".dmg"],
-    "AUDIO": [".aac", ".aa", ".aac", ".dvf", ".m4a", ".m4b", ".m4p", ".mp3", 
+    "AUDIO": [".aac", ".aa", ".aac", ".dvf", ".flac", ".m4a", ".m4b", ".m4p", ".mid", ".midi", ".mp3", 
               ".msv", ".ogg", "oga", ".raw", ".vox", ".wav", ".wma"], 
     "PLAINTEXT": [".txt", ".in", ".out",".csv",".log"],
     "POWERSHELL": [".ps1",".psm1",".psd1"],
@@ -32,7 +32,7 @@ DIRECTORIES = {
     "XML": [".xml",".fxml"], 
     "EXECUTABLE": [".exe",".run"], 
     "SHELL": [".sh"],
-    "DATABASE":[".db",".sql"],
+    "DATABASE":[".db",".sql",".sqlite"],
     "C#" :[".cs"],
     "C++": [".cpp"],
     "C": [".c"],
@@ -45,7 +45,7 @@ DIRECTORIES = {
     "Coldfusion": [".cfm"],
     "Erlang": [".yaws"],
     "Flash": [".swf"],
-    "Java": [".jar",".java",".jsp", ".jspx", ".wss", ".do", ".action"],
+    "Java": [".jar",".java",".jsp", ".jspx", ".wss", ".do", ".action", ".class"],
     "Kotlin": [".kt",".kts",".ktm"],
     "JavaScript": [".js"],
     "TypeScript": [".ts"],
@@ -56,9 +56,11 @@ DIRECTORIES = {
     "PHP": [".php", ".php4", ".php3", ".phtml"],
     "Ruby": [".rb", ".rhtml"],
     "SSI": [".shtml"],
+    "SWIFT": [".swift"],
     "XML": [".xml", ".rss", ".svg"],
     "APPS": [".app",".ipa",".apk"],
-    "LINKS":[".webloc",".lnk"]
+    "LINKS":[".webloc",".lnk"],
+    "FONTS":[".fnt", ".fon", ".otf", ".ttf"]
 
 }
 
